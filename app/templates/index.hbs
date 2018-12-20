@@ -1,0 +1,37 @@
+
+{{#es-header}}
+  {{#es-navbar}}
+  {{/es-navbar}}
+{{/es-header}}
+
+<main class="container">
+  <h1>Upcoming changes in {{latestRelease}}</h1>
+  
+  <h2>Ember.js</h2>
+  {{#each model.ember as |release|}}
+    {{#if release.prerelease}}
+      {{#if (is-new-version release.tag_name latestRelease)}}
+        <p>{{markdown-to-html release.body}}</p>
+      {{/if}}
+    {{/if}}
+  {{/each}}
+
+  <h2>Ember Data</h2>
+  {{#each model.datajs as |release|}}
+    {{#if release.prerelease}}
+      {{#if (is-new-version release.tag_name latestRelease)}}
+        <p>{{markdown-to-html release.body}}</p>
+      {{/if}}
+    {{/if}}
+  {{/each}}
+
+  <h2>Ember CLI</h2>
+  {{#each model.cli as |release|}}
+    {{#if release.prerelease}}
+      {{#if (is-new-version release.tag_name latestRelease)}}
+        <p>{{markdown-to-html release.body}}</p>
+      {{/if}}
+    {{/if}}
+  {{/each}}
+</main>
+  {{es-footer}}
