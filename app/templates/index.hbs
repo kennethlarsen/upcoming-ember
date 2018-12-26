@@ -3,7 +3,7 @@
   {{#es-navbar}}
   {{/es-navbar}}
 {{/es-header}}
-
+{{dataContent}}
 <main class="container">
   <h1>Upcoming changes in {{latestRelease}}</h1>
   
@@ -29,7 +29,7 @@
   {{#each model.cli as |release|}}
     {{#if release.prerelease}}
       {{#if (is-new-version release.tag_name latestRelease)}}
-        <p>{{markdown-to-html release.body}}</p>
+        <p>{{markdown-to-html (strip-changelog release.body)}}</p>
       {{/if}}
     {{/if}}
   {{/each}}

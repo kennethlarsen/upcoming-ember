@@ -13,5 +13,5 @@ export default Controller.extend({
     });
 
     return `v3.${highestNumber}`;
-  })
+  }),
 });
