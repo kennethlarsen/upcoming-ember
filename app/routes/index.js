@@ -12,7 +12,8 @@ export default Route.extend({
       }),
       cli: this.get("store").query("github-release", {
         repo: "ember-cli/ember-cli"
-      })
+      }),
+      pullRequests: this.get('store').query('github-pull', { repo: 'emberjs/website' })
     });
   }
 });

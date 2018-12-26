@@ -1,0 +1,5 @@
+{{#each @pullRequests as |pr|}}
+  {{#if (is-release-post pr.title @latestRelease)}}
+    <p>A PR with a release post has been created: <a href={{pr.htmlUrl}}>{{pr.title}}</a></p>
+  {{/if}}
+{{/each}}

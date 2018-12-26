@@ -1,12 +1,15 @@
-
 {{#es-header}}
   {{#es-navbar}}
   {{/es-navbar}}
 {{/es-header}}
-{{dataContent}}
 <main class="container">
   <h1>Upcoming changes in {{latestRelease}}</h1>
-  
+
+  {{display-pr
+    pullRequests=model.pullRequests
+    latestRelease=latestRelease
+  }}
+
   <h2>Ember.js</h2>
   {{#each model.ember as |release|}}
     {{#if release.prerelease}}
